@@ -5,15 +5,15 @@ import pygame, random
 pygame.init()
 pygame.display.init()
 Time = pygame.time.Clock()
-Clean = pygame.font.Font("Game Art/Fonts/Roboto-Light.ttf", 50)
-Pixel = pygame.font.Font("Game Art/Fonts/Crang.ttf", 50)
+Clean = pygame.font.Font("Fonts/Roboto-Light.ttf", 50)
+Pixel = pygame.font.Font("Fonts/Crang.ttf", 50)
 
 # Window setup
 ScreenW = 400
 ScreenH = 400
 Screen = pygame.display.set_mode((ScreenW, ScreenH))
 pygame.display.set_caption("2048")
-Blank = pygame.image.load("Game Art/Blank.png")
+Blank = pygame.image.load("Blank.png")
 pygame.display.set_icon(Blank)
 
 # Subroutine to convert a grid position to list position
@@ -146,8 +146,8 @@ def Add(Numbers):
 Direction = (0, 0)
 
 # Make the text
-Font = pygame.font.Font("Game Art/Fonts/Crang.ttf", 50)
-Font2 = pygame.font.Font("Game Art/Fonts/pixel.ttf", 25)
+Font = pygame.font.Font("Fonts/Crang.ttf", 50)
+Font2 = pygame.font.Font("Fonts/pixel.ttf", 25)
 EndText = Font.render("GAME OVER!", False, (255, 0, 0))
 EndText_Rect = pygame.Surface.get_rect(EndText)
 EndText_Rect.center = (ScreenW / 2, ScreenH / 4)
@@ -239,8 +239,6 @@ while True:
                                 if Numbers[Pos] == LastNum:
                                         Done += 1
                                 Pos += 1
-                if Direction != (0, 0):
-                        print(Done)
                 if Done == 16 and 0 not in Numbers:
                         Game = False
                 if Direction != (0, 0):
